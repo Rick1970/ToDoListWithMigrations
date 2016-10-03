@@ -17,5 +17,9 @@ namespace ToDoListWithMigrations.Models
         {
             base.OnModelCreating(builder);
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=ToDoListWithMigrations;integrated security=True");
+        }
     }
 }
